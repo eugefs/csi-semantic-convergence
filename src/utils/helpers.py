@@ -1,8 +1,12 @@
+"""
+Utility functions for the CSI project.
+"""
+
 from typing import Iterable
 
 
 def validate_responses(responses: Iterable[str]) -> list[str]:
-    """Validate and clean a list of text responses."""
+    """Validate and normalize model responses."""
 
     cleaned = [
         r.strip()
@@ -11,6 +15,8 @@ def validate_responses(responses: Iterable[str]) -> list[str]:
     ]
 
     if len(cleaned) < 2:
-        raise ValueError("At least two non-empty responses are required.")
+        raise ValueError(
+            "At least two non-empty responses are required."
+        )
 
     return cleaned

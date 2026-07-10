@@ -1,15 +1,17 @@
-from src.metrics.semantic_convergence import SemanticConvergence
+from src.utils.helpers import validate_responses
 
 
 def main():
-    metric = SemanticConvergence()
 
-    result = metric.compute([
+    responses = [
         "Hello world.",
-        "Hello world."
-    ])
+        "Hello world.",
+        ""
+    ]
 
-    print(result)
+    cleaned = validate_responses(responses)
+
+    print(cleaned)
 
 
 if __name__ == "__main__":
