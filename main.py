@@ -1,3 +1,4 @@
+from src.visualization.plots import plot_similarity_matrix
 """
 Main entry point for the CSI framework.
 """
@@ -58,6 +59,16 @@ def main():
                 output_dir / "results.json",
             )
 
+            save_results(
+                result,
+                output_dir / "results.json",
+            )
+
+            plot_similarity_matrix(
+                result["matrix"],
+                output_dir / "similarity_matrix.png",
+            )
+
             print(
                 f"Semantic convergence: "
                 f"{result['semantic_convergence']:.3f}"
@@ -68,6 +79,10 @@ def main():
                 f"{output_dir / 'results.json'}"
             )
 
+            print(
+                f"Heatmap saved to: "
+                f"{output_dir / 'similarity_matrix.png'}"
+            )
         print()
 
     print("=" * 60)
