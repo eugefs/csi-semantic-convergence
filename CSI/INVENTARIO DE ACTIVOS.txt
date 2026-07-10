@@ -1,0 +1,9 @@
+ACTIVOS CSI
+
+1. Marco teórico Continuum
+2. Continuum Semantic Index (CSI)
+3. Terminología asociada
+4. Protocolos experimentales
+5. Documentación técnica
+6. Futuro software
+7. Marca comercial (pendiente)
