@@ -1,0 +1,11 @@
+[project]
+name = "csi-semantic-convergence"
+version = "0.1.0"
+description = "Semantic Convergence and Diversity in Large Language Models"
+authors = [
+    {name = "Eugenio Fontenla Suárez"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = []
