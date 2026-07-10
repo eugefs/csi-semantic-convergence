@@ -1,3 +1,13 @@
+experiment:
+  name: exp-001
+
 models:
   - all-MiniLM-L6-v2
   - all-mpnet-base-v2
+
+input:
+  responses: experiments/exp-001/data/responses.json
+
+output:
+  results: experiments/exp-001/results/results.json
+  plot: experiments/exp-001/plots/similarity_matrix.png

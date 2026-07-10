@@ -1,19 +1,38 @@
+import json
+
+from src.evaluation.batch_runner import load_all_configs
 from src.metrics.semantic_convergence import SemanticConvergence
 
 
 def main():
 
-    responses = [
-        "Artificial intelligence is transforming science.",
-        "AI is changing scientific research.",
-        "Machine learning improves research workflows."
-    ]
+    configs = load_all_configs()
 
-    metric = SemanticConvergence()
+    print(f"Running {len(configs)} experiment(s)\n")
 
-    result = metric.compute(responses)
+    for config in configs:
 
-    print(result)
+        print(f"Experiment: {config['experiment']['name']}")
+
+        with open(
+            config["input"]["responses"],
+            "r",
+            encoding="utf-8",
+        ) as file:
+            data = json.load(file)
+
+        for model in config["models"]:
+
+            print(f"  Model: {model}")
+
+            metric = SemanticConvergence(model)
+
+            result = metric.compute(data["responses"])
+
+            print(
+                f"    Semantic convergence: "
+                f"{result['semantic_convergence']:.3f}"
+            )
 
 
 if __name__ == "__main__":

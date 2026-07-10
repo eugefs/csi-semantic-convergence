@@ -1,0 +1,12 @@
+experiment:
+  name: exp-002
+
+models:
+  - all-MiniLM-L6-v2
+
+input:
+  responses: experiments/exp-002/data/responses.json
+
+output:
+  results: experiments/exp-002/results/results.json
+  plot: experiments/exp-002/plots/similarity_matrix.png
