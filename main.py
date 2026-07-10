@@ -1,17 +1,19 @@
-from src.utils.helpers import validate_responses
+from src.metrics.semantic_convergence import SemanticConvergence
 
 
 def main():
 
     responses = [
-        "Hello world.",
-        "Hello world.",
-        ""
+        "Artificial intelligence is transforming science.",
+        "AI is changing scientific research.",
+        "Machine learning improves research workflows."
     ]
 
-    cleaned = validate_responses(responses)
+    metric = SemanticConvergence()
 
-    print(cleaned)
+    result = metric.compute(responses)
+
+    print(result)
 
 
 if __name__ == "__main__":
