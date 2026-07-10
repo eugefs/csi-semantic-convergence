@@ -5,3 +5,20 @@ __pycache__/
 .idea/
 Thumbs.db
 .DS_Store
+
+# Private workspace
+private/
+
+# Personal and confidential
+*.env
+*.key
+*.pem
+*.p12
+
+# Temporary Office files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Logs
+*.log
